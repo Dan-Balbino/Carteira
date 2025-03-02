@@ -1,4 +1,10 @@
 venv
 .env
 tarefas.todo
+.gitignore
+carteira-452420-4d2baddfbf91.json
+__pycache__
+
+
 teste.py
+teste2.py

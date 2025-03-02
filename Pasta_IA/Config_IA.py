@@ -10,13 +10,18 @@ config_geracao = {
   "response_mime_type": "text/plain",
 }
 
-instrucoes = "Você é um assitente de finanças. Seu trabalho é executar as funções de acordo com a solicitação do usuário."
+instrucoes = """
+Você é um assitente de finanças. Seu trabalho é executar as funções de acordo com a solicitação do usuário.
+Você deve exibir as mensagens retornadas pelas funções, modificando apenas quando mais de uma operação for realizada.
+Coloque casas decimais apenas se o valor informado pelo usuário for um valor com casas decimais, caso contrario, coloque apenas o valor inteiro.
+
+"""
 
 modelo_IA = GenerativeModel(
-  model_name="gemini-1.5-pro-latest",
+  model_name="gemini-2.0-flash-001",
   generation_config=config_geracao,
   system_instruction=instrucoes,
-  tools=[gasto, ganho]
+  tools=[adicionar, remover]
 )
 
 
